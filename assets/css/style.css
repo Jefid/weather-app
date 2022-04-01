@@ -1,0 +1,75 @@
+:root {
+    --primary: #ccd4da;
+    --secondary: #0a5a43;
+    --tertiary: #22dddd;
+    --light-dark: #863924;
+    --dark: #38302e;
+    --border-radius: .3rem;
+
+}
+
+
+body {
+    background-color: var(--secondary);
+    display: flex;
+}
+
+.mainDisplay {
+    background-color: var(--tertiary);
+    padding: 10px;
+    display: flex;
+height: 90%;
+width: 90%;
+
+}
+
+.searchForm {
+    background-color: var(--tertiary);
+    padding: 10px;
+    justify-self: left;
+    max-width: 100px;
+}
+
+.weatherDisplay {
+    background-color: var(--primary);
+    padding: 10px;
+    display: flex;
+    justify-self: right;
+    max-width: 100%;
+}
+
+.currentWeatherDisplay {
+    background-color: var(--light-dark);
+    padding: 10px;
+}
+
+.futureWeatherDisplay {
+    background-color: var(--dark);
+    padding: 10px;
+    display: flex;
+}
+
+.day1 {
+    background-color: var(--primary);
+    padding: 5px;
+}
+
+.day2 {
+    background-color: var(--primary);
+    padding: 5px;
+}
+
+.day3 {
+    background-color: var(--primary);
+    padding: 5px;
+}
+
+.day4 {
+    background-color: var(--primary);
+    padding: 5px;
+}
+
+.day5 {
+    background-color: var(--primary);
+    padding: 5px;
+}
