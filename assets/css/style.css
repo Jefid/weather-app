@@ -1,15 +1,15 @@
 :root {
     --primary: #ccd4da;
-    --secondary: #0a5a43;
-    --tertiary: #22dddd;
-    --light-dark: #863924;
-    --dark: #38302e;
+    --secondary: #4895ef;
+    --tertiary: #4cc9f0;
+    --light-dark: #4361ee;
+    --dark: #3f37c9;
 }
 
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
-    background-color: #eaeaea;
+    background-color: var(--primary);
     font-weight: 500;
     text-align: center;
     justify-content: center;
@@ -24,10 +24,10 @@ body {
     border: 1px solid;
     height: 40px;
     margin-right: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 4.25px;
   }
   .btn:hover {
-    background-color: #22dddd;
+    background-color: var(--tertiary);
     transition: ease-in;
     opacity: 90%;
   }
@@ -37,10 +37,11 @@ input {
     border-radius: .25rem;
     border: 1px solid;
     height: 40px;
+    margin-top: 50px;
   }
 
   .footer {
-    background-color: #3e5c76;
+    background-color: var(--dark);
     height: 60px;
     text-align: center;
     justify-content: center;
@@ -50,6 +51,85 @@ input {
 footer p, footer a {
     margin-top: 20px;
     text-decoration: none;
-    color: #eaeaea;
+    color: var(--primary);
     text-align: center;
   }
+
+  textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    color:var(--dark);
+    border-left: 1px solid var(--dark);
+    padding: 10px;
+  }
+  
+  .hero {
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--primary);
+    border-radius: 0;
+    border-bottom: 2px solid var(--dark);
+    align-content: center;
+  }
+
+  .description {
+    white-space: pre-wrap;
+  }
+  
+  .time-block {
+    text-align: center;
+    border-radius: 15px;
+  }
+  
+  .current-forecast {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .card {
+    align-items: center;
+    align-content: center;
+  }
+  
+  .card-small {
+    margin: 5px;
+    width: 250px;
+    justify-content: space-around;
+  }
+  
+main {
+    text-align: center;
+    padding-bottom: 200px;
+  }
+
+  
+img {
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+  }
+
+  
+div {
+    padding: 15px;
+    align-content: center;
+  }
+
+  .green {
+    background-color: #97dc90;
+  }
+  
+  .yellow {
+    background-color: #f0f779;
+  }
+  
+  .orange {
+    background-color: #f7b879;
+  }
+  
+  .red {
+    background-color: #f27272;
+  }
+
+  
