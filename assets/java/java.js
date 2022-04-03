@@ -32,3 +32,48 @@ searchBtn.addEventListener("click", function (event) {
   }
 });
 
+
+//function to update storage
+
+function updateStorage(searchQuery) {
+    userInput.push(searchQuery)
+    localStorage.setItem("queries", JSON.stringify(userInput));
+}
+
+//function to get the city the user searched  
+
+
+function getCityData(searchQuery) {
+    console.log(userInput);
+
+  var cityData =
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
+    searchQuery +
+    "&limit=1&appid=096c6b1c200b27403244ac76a0e8bd2d";
+
+  fetch(cityData).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        // if nothing comes back, console log
+        if (data === "[]") {
+          $("#error").textContent = "That didn't work. Try again.";
+        } else {
+          // if data received, set lat/lon to localstorage
+          localStorage.setItem("lat", data[0].lat);
+          localStorage.setItem("lon", data[0].lon);
+          console.log("City data for: " + data[0].name, data[0].state);
+          //when submit is clicked, text will persist
+          $("#search-bar").textContent = data[0].name;
+          // fetch weather data for city
+          getWeatherData(data[0].name, data[0].state);
+        }
+      });
+    }
+  });
+}
+
+//function to load past searches as buttons
+
+function loadHistoryBtns() {
+
+}
