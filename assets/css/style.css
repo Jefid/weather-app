@@ -24,6 +24,7 @@ body {
     border: 1px solid;
     height: 40px;
     margin-right: 5px;
+    margin-bottom: 5px;
   }
   .btn:hover {
     background-color: #22dddd;
@@ -36,4 +37,19 @@ input {
     border-radius: .25rem;
     border: 1px solid;
     height: 40px;
+  }
+
+  .footer {
+    background-color: #3e5c76;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  
+footer p, footer a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #eaeaea;
+    text-align: center;
   }

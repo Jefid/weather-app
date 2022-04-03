@@ -29,12 +29,38 @@
             <label for="search-bar" id="error"></label>
             <input class="col-4" aria-label="Search by city" id="search-bar" placeholder="Search by city...">
             <button type="search" id="search-btn" class="btn">Search</button>
-
-
         </form>
 
+        <div class="alert alert-warning alert-dismissable fade" role="alert" id="error-msg"></div>
+
+        <div id="search-history">
+            <h5>Places you've searched:</h5>
+        </div>
+    
+        <div id="results"></div>
+    
+        <div id="current-forecast" class="card invisible">
+            <div id="img-container">
+                
+            </div>
+            <!-- today's forecast end  -->
+        </div>
+    
+        <div id="forecast-header" class="invisible">
+            <h4>4-day forecast</h4>
+        </div>
+    
+        <div id="future-forecast" class="row">
+        <!-- forecast for the next 5 days end  -->
+        </div>
 
     </main>
+
+    <footer class="footer fixed-bottom">
+        <p>
+            CHECK OUT MY GITHUB: <a href="https://github.com/jefid" target="_blank"> JEFID <i class="fas fa-external-link-alt"></i></a>
+        </p>
+    </footer>
 
 
 
