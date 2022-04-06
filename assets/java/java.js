@@ -133,11 +133,17 @@ function displayCurrent(weather, city, state) {
   var currentTempEl = document.createElement("h4");
   currentTempEl.textContent = "Temp: " + roundNum(weather.temp) + "\u00B0 F";
   currentForecastEl.appendChild(currentTempEl);
-  // FEEL
-  var currentFeelEl = document.createElement("h4");
-  currentFeelEl.textContent =
-    "Feels like: " + roundNum(weather.feels_like) + "\u00B0 F";
-  currentForecastEl.appendChild(currentFeelEl);
+
+
+  // WINDSPEED IN PROGRESS
+
+  var currentWindEl = document.createElement("h4");
+  currentWindEl.textContent =
+    "Wind speed: " + roundNum(weather.wind_speed) + "mph";
+  currentForecastEl.appendChild(currentWindEl);
+
+
+
   // HUMIDITY
   var currentHumidEl = document.createElement("h4");
   currentHumidEl.textContent = "Humidity: " + weather.humidity + "%";
