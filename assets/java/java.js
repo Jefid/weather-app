@@ -15,6 +15,11 @@ var forecastDate5 = moment().add(4, "days").format("MMM D");
 
 var userInput = [];
 
+//rounds numb
+function roundNum(num) {
+  return Math.floor(num);
+}
+
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -103,7 +108,7 @@ function displayCurrent(weather, city, state) {
   searchResultsEl.textContent = "";
   imgContainer.textContent = "";
   $("#search-bar").val("");
-  $("current-forecast").removeClass("invisible");
+  $("#current-forecast").removeClass("invisible");
   // show current weather for search
   var cityStateEl = document.createElement("h3");
   cityStateEl.textContent = "CURRENT WEATHER FOR: " + city + " " + state;
@@ -194,7 +199,7 @@ function loadHistoryBtns(queries) {
   queries = JSON.parse(localStorage.getItem("queries"));
   // if nothing
   if (queries === null) {
-    console.log("nothing in storage");
+    console.log("null");
   }
   // function to create buttons
   else {
