@@ -72,6 +72,37 @@ function getCityData(searchQuery) {
   });
 }
 
+function getWeatherData(city,state) {
+  var lat = localStorage.getItem("lat");
+  var lon = localStorage.getItem("lon");
+
+    var dataURL = 
+    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    lat +
+    "&lon=" +
+    lon +
+    "&units=imperial&exclude=minutely,hourly&appid=096c6b1c200b27403244ac76a0e8bd2d";
+
+  fetch(dataURL)
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          displayCurrent(data.current, city, state);
+          displayForecast(data.daily);
+        });
+      } else {
+        console.log("error");
+      }
+    })
+    .catch(function (error) {
+      console.log("unable to connect to openweather");
+    });
+}
+
+
+
+
+
 //function to load past searches as buttons
 
 function loadHistoryBtns() {
