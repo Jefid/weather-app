@@ -172,10 +172,10 @@ function displayForecast(forecasts) {
   futureForecastEl.textContent = "";
   $("#forecast-header").removeClass("invisible");
 
-  for (var i = 1; i <= 4; i++) {
+  for (var i = 1; i <= 5; i++) {
     // create elements for each forecast object
     var forecastObj = document.createElement("div");
-    forecastObj.classList = "card card-small";
+    forecastObj.classList = "card card-small col-md-2";
     var foreDate = document.createElement("h4");
     foreDate.setAttribute("id", "forecast-" + i);
     forecastObj.appendChild(foreDate);
@@ -198,6 +198,7 @@ function displayForecast(forecasts) {
   $("#forecast-2").text(forecastDate2);
   $("#forecast-3").text(forecastDate3);
   $("#forecast-4").text(forecastDate4);
+  $("#forecast-5").text(forecastDate5);
 }
 
 //  find search history in local storage
