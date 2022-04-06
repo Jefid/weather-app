@@ -1,5 +1,5 @@
 :root {
-    --primary: .yellow;
+    --primary: white;
     --secondary: #4895ef;
     --tertiary: #4cc9f0;
     --light-dark: #4361ee;
@@ -8,7 +8,7 @@
 
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     background-color: var(--primary);
     font-weight: 500;
     text-align: center;
@@ -21,13 +21,13 @@ body {
 
   .btn {
     border-radius: .25rem;
-    border: 1px solid;
+    border: 2px solid;
     height: 40px;
     margin-right: 5px;
     margin-bottom: 4.25px;
   }
   .btn:hover {
-    background-color: var(--tertiary);
+    background-color: var(--dark);
     transition: ease-in;
     opacity: 90%;
   }
@@ -35,7 +35,7 @@ body {
 
 input {
     border-radius: .25rem;
-    border: 1px solid;
+    border: 2px solid;
     height: 40px;
     margin-top: 50px;
   }
@@ -59,7 +59,7 @@ footer p, footer a {
     background: transparent;
     border: none;
     resize: none;
-    color:var(--dark);
+    color:var(--);
     border-left: 1px solid var(--dark);
     padding: 10px;
   }
@@ -82,6 +82,11 @@ footer p, footer a {
     border-radius: 15px;
   }
   
+  .row {
+    justify-content: space-between;
+
+  }
+
   .current-forecast {
     justify-content: center;
     text-align: center;
@@ -90,17 +95,24 @@ footer p, footer a {
   .card {
     align-items: center;
     align-content: center;
+    border: 5px solid;
+    background-color: var(--secondary);
+    color: var(--dark);
+
+
   }
   
   .card-small {
-    margin: 5px;
-    width: 250px;
-    justify-content: space-around;
+     margin: 5px; 
+    width: 400px; 
+    justify-content: space-between;
+    border: 5px solid;
+    
   }
   
 main {
     text-align: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
   }
 
   
@@ -132,4 +144,6 @@ div {
     background-color: #f27272;
   }
 
-  
+  #seach-history {
+    padding: 10px;
+  }

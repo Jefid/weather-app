@@ -185,13 +185,29 @@ function displayForecast(forecasts) {
     var foreHeader = document.createElement("h4");
     foreHeader.textContent = forecasts[i].weather[0].main;
     forecastObj.appendChild(foreHeader);
+
+
+    var foreHumid = document.createElement("h5");
+    foreHumid.textContent = "Humidity: " + roundNum(forecasts[i].humidity) + "%";
+    forecastObj.appendChild(foreHumid);
+
+    var foreWind = document.createElement("h5");
+    foreWind.textContent = "Wind: " + roundNum(forecasts[i].wind_speed) + "mph";
+    forecastObj.appendChild(foreWind);
+
     var foreLow = document.createElement("h5");
     foreLow.textContent = "Low: " + roundNum(forecasts[i].temp.min);
     forecastObj.appendChild(foreLow);
+
+
     var foreHigh = document.createElement("h5");
     foreHigh.textContent = "High: " + roundNum(forecasts[i].temp.max);
     forecastObj.appendChild(foreHigh);
     futureForecastEl.appendChild(forecastObj);
+
+
+
+
   }
 
   $("#forecast-1").text("Tomorrow");
