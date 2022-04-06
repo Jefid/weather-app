@@ -156,6 +156,63 @@ function displayCurrent(weather, city, state) {
   currentForecastEl.appendChild(currentUviEl);
 }
 
-//function to load past searches as buttons
+function displayForecast(forecasts) {
+  // clear old
+  futureForecastEl.textContent = "";
+  $("#forecast-header").removeClass("invisible");
 
-function loadHistoryBtns() {}
+  for (var i = 1; i <= 4; i++) {
+    // create elements for each forecast object
+    var forecastObj = document.createElement("div");
+    forecastObj.classList = "card card-small";
+    var foreDate = document.createElement("h4");
+    foreDate.setAttribute("id", "forecast-" + i);
+    forecastObj.appendChild(foreDate);
+    var foreImg = document.createElement("img");
+    foreImg.setAttribute("src", "https://openweathermap.org/img/wn/" + forecasts[i].weather[0].icon + ".png");
+    forecastObj.appendChild(foreImg);
+    var foreHeader = document.createElement("h4");
+    foreHeader.textContent = forecasts[i].weather[0].main;
+    forecastObj.appendChild(foreHeader);
+    var foreLow = document.createElement("h5");
+    foreLow.textContent = "Low: " + roundNum(forecasts[i].temp.min);
+    forecastObj.appendChild(foreLow);
+    var foreHigh = document.createElement("h5");
+    foreHigh.textContent = "High: " + roundNum(forecasts[i].temp.max);
+    forecastObj.appendChild(foreHigh);
+    futureForecastEl.appendChild(forecastObj);
+  }
+
+  $("#forecast-1").text("Tomorrow");
+  $("#forecast-2").text(forecastDate2);
+  $("#forecast-3").text(forecastDate3);
+  $("#forecast-4").text(forecastDate4);
+}
+
+//  find search history in local storage
+function loadHistoryBtns(queries) {
+  queries = JSON.parse(localStorage.getItem("queries"));
+  // if nothing
+  if (queries === null) {
+    console.log("nothing in storage");
+  }
+  // function to create buttons
+  else {
+    for (var i = 0; i < queries.length; i++) {
+      // create history buttons
+      var newBtn = document.createElement("button");
+      newBtn.textContent = queries[i];
+      newBtn.classList = "btn";
+      // newBtn.setAttribute("id", searchQuery)
+      searchHistory.appendChild(newBtn);
+    }
+  }
+};
+
+loadHistoryBtns();
+
+$(".btn").on("click", function() {
+  var searchQuery = $(this).text();
+  console.log(searchQuery);
+  getCityData(searchQuery)
+})
